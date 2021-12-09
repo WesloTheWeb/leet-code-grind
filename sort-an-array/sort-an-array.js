@@ -4,7 +4,6 @@
  */
 var sortArray = function(nums) {
     // Need a way to compare two numbers, and push to a new array
-    // use .sort() as it naturally does put numbers from least to greatest
     
     let n = nums.length;
     
