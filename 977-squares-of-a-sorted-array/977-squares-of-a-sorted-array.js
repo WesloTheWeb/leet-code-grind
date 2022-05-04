@@ -9,11 +9,22 @@
 
 */
 var sortedSquares = function(nums) {
-    let res = [];
+        // use two pointers
+    // create a new array
+    const result = new Array(nums.length);
+    let left = 0, 
+        right = nums.length - 1;
     
-    for (num of nums) {
-      res.push(num * num);  
-    };
+	// don't want to rearrange the array, so iterating the array in descending order 
+    for (let i = nums.length - 1; i >= 0; i--) {
+        if (Math.abs(nums[left]) < Math.abs(nums[right])) {
+            result[i] = nums[right] ** 2
+            right--;
+        } else {
+            result[i] = nums[left] ** 2
+            left++;
+        }
+    }
     
-    return res.sort((a,z) => a - z);
+    return result;
 };
