@@ -2,6 +2,7 @@
  * @param {number} num
  * @return {boolean}
  */
+//  time: O(log n) | space: O(1)
 var isPerfectSquare = function(num) {
      let p1 = 1;
 	// Split half of values that need to be checked. squared of num/2 will either be equal or greater then num
