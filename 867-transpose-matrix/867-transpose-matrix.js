@@ -20,19 +20,19 @@ transposedMatrix = [[1,4], [2,5], [3,6]]
 - We want to iterate through the array, while creating a new one that is transposed values.
 - Matching indices of the two subarrays
 */
-var transpose = function(matrix) {
-        let result =[];
-        let row = matrix.length;
-        let col = matrix[0].length;
-        for(let i=0; i< row; i++){
-            for(let j =0; j<col; j++){
-                if(!result[j]){
-                    result[j] = [];
-                } 
-                result[j][i] = matrix[i][j];
+var transpose = function (matrix) {
+    let result = [];
+    let row = matrix.length;
+    let col = matrix[0].length;
+    for (let i = 0; i < row; i++) {
+        for (let j = 0; j < col; j++) {
+            if (!result[j]) {
+                result[j] = [];
             }
+            result[j][i] = matrix[i][j];
         }
-        return result;
+    }
+    return result;
 };
 
 /*########
