@@ -14,5 +14,6 @@ var maxDepth = function(root) {
     // base case
     if (!root) return 0;
     
+    // recursive case
     return 1 + Math.max(maxDepth(root.left), maxDepth(root.right));
 };
