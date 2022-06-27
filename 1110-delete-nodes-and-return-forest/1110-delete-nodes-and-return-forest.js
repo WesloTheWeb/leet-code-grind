@@ -23,12 +23,12 @@ var delNodes = function(root, to_delete) {
         
         const isNodeDeleted = to_delete.includes(node.val);
 
-        if(node.left) node.left = helper(node.left, isNodeDeleted);
-        if(node.right) node.right = helper(node.right, isNodeDeleted);
-        if(isRoot && !isNodeDeleted) res.push(node);
+        if (node.left) node.left = helper(node.left, isNodeDeleted);
+        if (node.right) node.right = helper(node.right, isNodeDeleted);
+        if (isRoot && !isNodeDeleted) res.push(node);
         
         return isNodeDeleted ? null : node;
-    }
+    };
 
     helper(root, true);
     return res;
