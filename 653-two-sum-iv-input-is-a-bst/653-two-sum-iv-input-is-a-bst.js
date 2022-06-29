@@ -18,7 +18,7 @@ var findTarget = function(root, k) {
     let high = result.length - 1;
     
     while (low < high) {
-          if(result[low] + result[high] === k) {
+          if (result[low] + result[high] === k) {
               return true;
           }
            else if (result[low] + result[high] > k) {
