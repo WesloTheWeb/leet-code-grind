@@ -22,27 +22,29 @@ any number higher than low, but less than high +
 any number lower than high, but higher than low
 */
 var rangeSumBST = function(root, low, high) {
-  let sum = 0
-  dfs(root)
-  return sum
+  let sum = 0;
   
-  function dfs(node) {
+  const dfs = (node) => {
     if (!node) {
-      return
+      return;
     }
     
     if (node.val < low) {
-      dfs(node.right)
-      return
+      dfs(node.right);
+      return;
     }
     
     if (node.val > high) {
-      dfs(node.left)
-      return
+      dfs(node.left);
+      return;
     }
 
-    sum += node.val
-    dfs(node.left)
-    dfs(node.right)
-  }
+    sum += node.val;
+    dfs(node.left);
+    dfs(node.right);
+  };
+    
+  dfs(root);
+  return sum;
+  
 };
