@@ -36,13 +36,13 @@ Recurse the left and the right subtree of the current node. If both left and rig
 */
 var isCousins = function(root, x, y) {
     
- const callDFS = (val, myRoot=root, parent=null, depth=0) => {
-        if(!myRoot) return false;
-        if(myRoot.val === val) return [depth, parent];
+    const callDFS = (val, myRoot = root, parent = null, depth = 0) => {
+        if (!myRoot) return false;
+        if (myRoot.val === val) return [depth, parent];
         depth++;
         return callDFS(val, myRoot.right, myRoot.val, depth) || callDFS(val, myRoot.left, myRoot.val, depth);
     }
-    
+
     const [depthX, parentX] = callDFS(x);
     const [depthY, parentY] = callDFS(y);
 
