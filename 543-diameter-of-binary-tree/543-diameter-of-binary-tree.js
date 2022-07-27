@@ -20,6 +20,7 @@ we want to recursively explore node's children, so we call longestPath again wit
 4. if leftPath plus rightPath is longer than the current longest diameter found, then we need to update diameter;
 5. finally, we return the longer one of leftPath and rightPath. Remember to add 11 as the edge connecting it with its parent.
 */
+
 var diameterOfBinaryTree = function (root) {
     let diameter = 0;
 
@@ -28,11 +29,11 @@ var diameterOfBinaryTree = function (root) {
 
         const leftPath = longestPath(treeNode.left);
         const rightPath = longestPath(treeNode.right);
-    
+
+        // choose the highest between either the left and right subtree or the current diameter.
         diameter = Math.max(leftPath + rightPath, diameter);
-        
+
         return Math.max(leftPath, rightPath) + 1;
-        // return diameter = 1 + Math.max(diameter, leftPath + rightPath);
     };
 
     longestPath(root);
