@@ -10,21 +10,22 @@
  * @param {number[]} nums
  * @return {TreeNode}
  */
-var sortedArrayToBST = function(nums) {
-    if (nums == null || !nums.length) {
-        return null;
-    }
 
-    let mid = Math.floor(nums.length / 2);
-    const node = new TreeNode(nums[mid]);
-    node.left = sortedArrayToBST(nums.slice(0, mid));
-    node.right = sortedArrayToBST(nums.slice(mid + 1, nums.length))
-    return node;  
+var sortedArrayToBST = function (nums) {
+
+    const helper = (leftSide, rightSide) => {
+        // base case
+        if (leftSide > rightSide) return null;
+
+        const mid = Math.floor((leftSide + rightSide) / 2);
+        const root = new TreeNode(nums[mid]);
+
+        root.left = helper(leftSide, mid - 1);
+        root.right = helper(mid + 1, rightSide)
+
+        return root;
+    };
+
+    return helper(0, nums.length - 1);
 };
 
-/*Approach:
-- Take sorted array and find the middle index
-- middle index, left is smaller, right is smaller becomes root
-- dequeue the array to resemble bst.
-
-*/
