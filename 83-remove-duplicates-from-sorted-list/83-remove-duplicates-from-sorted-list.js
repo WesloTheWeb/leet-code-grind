@@ -17,7 +17,7 @@ var deleteDuplicates = function(head) {
         if (cur.next.val === cur.val) {
             cur.next = cur.next.next;
         } else {
-            cur = cur.next
+            cur = cur.next;
         };
     };
     
