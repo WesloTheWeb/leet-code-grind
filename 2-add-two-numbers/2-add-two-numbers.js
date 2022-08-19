@@ -11,36 +11,22 @@
  * @return {ListNode}
  */
 var addTwoNumbers = function (l1, l2) {
-    let values = [];
-    let overflow = 0;
+    let carry = 0;
+    let resultNode = new ListNode(0);
+    let returnNode = resultNode;
 
-    while (l1.next || l2.next) {
-        const value = (l1.val + l2.val + overflow) % 10;
-        overflow = l1.val + l2.val + overflow >= 10 ? 1 : 0;
-        values.push(value);
+    while (l1 || l2) {
+        const sum = (l1 ? l1.val : 0) + (l2 ? l2.val : 0) + carry;
+        resultNode.next = new ListNode(sum >= 10 ? sum % 10 : sum);
+        carry = sum >= 10 ? Math.floor(sum / 10) : 0;
+        l1 = l1 ? l1.next : null;
+        l2 = l2 ? l2.next : null;
+        resultNode = resultNode.next;
+    }
 
-        l1 = l1.next || new ListNode(0);
-        l2 = l2.next || new ListNode(0);
-    };
+    if (carry > 0) {
+        resultNode.next = new ListNode(carry);
+    }
 
-    const value = (l1.val + l2.val + overflow) % 10;
-    overflow = l1.val + l2.val + overflow >= 10 ? 1 : 0;
-    values.push(value);
-
-    if (overflow === 1) {
-        values.push(1);
-    };
-
-    let node = undefined;
-    values.reverse().forEach(item => {
-        if (node === undefined) {
-            node = new ListNode(item);
-        } else {
-            const newNode = new ListNode(item);
-            newNode.next = node;
-            node = newNode;
-        }
-    });
-
-    return node;
-};
+    return returnNode.next;
+}
