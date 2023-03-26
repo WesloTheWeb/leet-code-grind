@@ -3,25 +3,11 @@
  * @return {number}
  */
 var repeatedNTimes = function(nums) {
-    nums.sort()
-
-    const n = nums.length / 2
-    const minimumRepitions = nums.length - (n)
-
-    let counter = 0
-
-    for (let i = 0; i < nums.length; i++) {
-        if (i === 0) {
-            counter++
-            continue
-        }
-
-        if (nums[i] === nums[i - 1]) {
-            counter++
-        } else {
-            counter = 1
-        }
-
-        if (counter >= minimumRepitions) return nums[i]
-    }
+    for (let k = 1; k <= 3; k++) {
+        for (let i = 0; i < nums.length - k; i++) {
+            if (nums[i + k] === nums[i]) {
+              return nums[i]
+            };
+        };
+    };
 };
