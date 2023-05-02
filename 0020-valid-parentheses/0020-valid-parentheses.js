@@ -19,9 +19,6 @@ Space: O(n) n is the length of the array / string.
 
 */
 
-
-const inputTypes = ['(', ')', '{', '}','[',']'];
-
 var isValid = function(s) {
     const stack = [];
     const brackets = {
