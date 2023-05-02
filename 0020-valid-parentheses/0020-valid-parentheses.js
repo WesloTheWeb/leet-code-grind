@@ -41,9 +41,9 @@ var isValid = function(s) {
             // If they don't match, return false
             if (stack.pop() !== currentChar) {
                 return false;
-            }
-        }
-    }
+            };
+        };
+    };
 
     // If the stack is empty after iterating through the input string, the input string is valid
     return stack.length === 0;
