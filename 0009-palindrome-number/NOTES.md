@@ -1,3 +1,8 @@
+**Two ways to do this**
+Obvious way = String way
+​
+Math way = use of modulo and dividing hundreth, ones place.
+​
 We need to account for negative numbers
 **same number forward and backwards, left to right**
 Basis of palindromes....
