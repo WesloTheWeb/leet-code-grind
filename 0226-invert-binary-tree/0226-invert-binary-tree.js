@@ -10,26 +10,28 @@
  * @param {TreeNode} root
  * @return {TreeNode}
  */
+/*
+1. bottom up approach recursion.
+2. define base case of node.
+3. swap left and right.
+4. bubble up to the top.
+*/
 var invertTree = function(root) {
-
-     if (!root) return null;
-
-    const queue = [];
-    queue.push(root);
-
-    while (queue.length > 0) {
-        let curr = queue.shift();
-        let temp = curr.left;
-        curr.left = curr.right;
-        curr.right = temp;
+    
+    const helper = node => {
+        // base case
+        if (!node) return null;
         
-        if (curr.left) {
-            queue.push(curr.left);
-        }
-        if (curr.right) {
-            queue.push(curr.right)
-        };
+        // swap
+        let temp = node.left;
+        node.left = node.right;
+        node.right = temp;
+        
+        helper(node.left);
+        helper(node.right);
     };
-
+    
+    helper(root);
+    
     return root;
 };
