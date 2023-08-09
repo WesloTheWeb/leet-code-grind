@@ -2,16 +2,7 @@
  * @param {number[]} nums
  * @return {number[][]}
  */
-/* Approach - 2 pointers w/ iterator to occupy 3 numbers
-1. create results array.
-2. sort the input the array (o(nlogn)
-3. outer loop iterate over the array
-4. create inner loop while low < high
-5. create runningSum to do calculations and to find triplets
-6. return results array
 
-
-*/
 var threeSum = function(nums) {
     const results = [];
     
@@ -21,7 +12,8 @@ var threeSum = function(nums) {
          // check for duplicates
         if (i !== 0 && nums[i] === nums[i-1]) {
             continue;
-        }
+        };
+        
       let low = i + 1;
       let high = nums.length - 1;
    
