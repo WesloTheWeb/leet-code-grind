@@ -12,7 +12,7 @@
  */
 var maxDepth = function(root) {
     // base case
-    if (!root) return null;
+    if (!root) return 0;
     
     return 1 + Math.max(maxDepth(root.left), maxDepth(root.right));
 };
