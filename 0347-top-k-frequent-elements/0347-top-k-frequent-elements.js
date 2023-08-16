@@ -4,6 +4,8 @@
  * @return {number[]}
  */
 /*
+Time: o(n log n), we are sorting and significantly impacts performance as input grows.
+Space: O(n) where n is the length of the array
 1. Create results array
 2. Create frequency hashmap
 3. Iterate over the nums array, filling out the hashmap.
