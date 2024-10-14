@@ -10,11 +10,11 @@ var twoSum = function(nums, target) {
         const complement = target - nums[i];
 
         if (map.has(complement)) {
-            return [map.get(complement), i];
+            return [map.get(complement), i]
         } else {
-            map.set(nums[i], i)
+            map.set(nums[i], i);
         };
     };
-    
+
     return [];
 };
