@@ -9,15 +9,12 @@ var twoSum = function(nums, target) {
     for (let i = 0; i < nums.length; i++) {
         const complement = target - nums[i];
 
-        // want to return the index
         if (map.has(complement)) {
-            return [map.get(complement), i]
+            return [map.get(complement), i];
+        } else {
+            map.set(nums[i], i)
         };
-
-        // build the map of: value - index
-        map.set(nums[i], i);
     };
-
+    
     return [];
 };
-
