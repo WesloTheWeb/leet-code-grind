@@ -3,20 +3,22 @@
  * @return {boolean}
  */
 var isPalindrome = function(x) {
-    // String Approach
-    let str = x.toString();
-    
+    if (x < 0) return false;
+
+    const newStr = x.toString();
+
     let left = 0;
-    let right = str.length - 1;
-    
+    let right = newStr.length - 1;
+
     while (left < right) {
-        if (str[left] !== str[right]) {
-            return false;      
+        if (newStr[left] !== newStr[right]) {
+            return false;
         };
-        
+
         left++;
         right--;
-    };
-    
+    };  
+
     return true;
+
 };
