@@ -7,6 +7,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 |  |
 | ------- |
 | [0001-two-sum](https://github.com/WesloTheWeb/leet-code-grind/tree/master/0001-two-sum) |
+| [0035-search-insert-position](https://github.com/WesloTheWeb/leet-code-grind/tree/master/0035-search-insert-position) |
 | [1306-minimum-absolute-difference](https://github.com/WesloTheWeb/leet-code-grind/tree/master/1306-minimum-absolute-difference) |
 ## Hash Table
 |  |
@@ -20,4 +21,8 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 |  |
 | ------- |
 | [0009-palindrome-number](https://github.com/WesloTheWeb/leet-code-grind/tree/master/0009-palindrome-number) |
+## Binary Search
+|  |
+| ------- |
+| [0035-search-insert-position](https://github.com/WesloTheWeb/leet-code-grind/tree/master/0035-search-insert-position) |
 <!---LeetCode Topics End-->
