@@ -3,37 +3,22 @@
  * @param {number} k
  * @return {number[]}
  */
-/*
-Time: o(n log n), we are sorting and significantly impacts performance as input grows.
-Space: O(n) where n is the length of the array
-1. Create results array
-2. Create frequency hashmap
-3. Iterate over the nums array, filling out the hashmap.
-4. sort the frequency hashmap from greatest to least
-5. iterate over the sorted frequency 'k' times and grab the elements to push to results
-6. Return results.
-*/
-
 var topKFrequent = function(nums, k) {
-    const results = [];
-    const frequencyMap = new Map();
+    const frequencyNums = new Map();
 
-    // populate our hashmap
     for (let num of nums) {
-        if (frequencyMap.has(num)) {
-            frequencyMap.set(num, frequencyMap.get(num) + 1)
-        } else {
-          frequencyMap.set(num, 1);  
-        };
+        frequencyNums.set(num, (frequencyNums.get(num) || 0) + 1);
     };
-    
-    // sort from greatest to least
-    let sortedFrequencies = [...frequencyMap.entries()].sort((a, z) => z[1] - a[1]);
-    
-    // iterate k times to grab the most frequent elements.
-    for (let i = 0; i < k; i++) {
-        results.push(sortedFrequencies[i][0]);
-    };
-   
-    return results;
+
+    const newArr = Array.from(frequencyNums).map(([num, freq]) => [freq, num]);
+
+    return newArr.sort((a, b) => b[0] - a[0]).slice(0, k).map((pair) => pair[1]);
 };
+
+/*
+1. Create a hashmap of the `numbers: frequency`
+2. iterate over the `nums` array, constructing the hashmap.
+3. We want to turn into an array, flip frequency to numbers, and sort greatest to least.
+4. Once sorted slice from 0 to k 
+5. return the numbers in a new array
+*/
