@@ -21,4 +21,7 @@ var topKFrequent = function(nums, k) {
 3. We want to turn into an array, flip frequency to numbers, and sort greatest to least.
 4. Once sorted slice from 0 to k 
 5. return the numbers in a new array
+
+// Time complexity: O(n + k log k), where k is the number of unique elements.
+// Space complexity: O(n), n is length of array
 */
