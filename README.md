@@ -48,4 +48,20 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 |  |
 | ------- |
 | [0347-top-k-frequent-elements](https://github.com/WesloTheWeb/leet-code-grind/tree/master/0347-top-k-frequent-elements) |
+## Stack
+|  |
+| ------- |
+| [0144-binary-tree-preorder-traversal](https://github.com/WesloTheWeb/leet-code-grind/tree/master/0144-binary-tree-preorder-traversal) |
+## Tree
+|  |
+| ------- |
+| [0144-binary-tree-preorder-traversal](https://github.com/WesloTheWeb/leet-code-grind/tree/master/0144-binary-tree-preorder-traversal) |
+## Depth-First Search
+|  |
+| ------- |
+| [0144-binary-tree-preorder-traversal](https://github.com/WesloTheWeb/leet-code-grind/tree/master/0144-binary-tree-preorder-traversal) |
+## Binary Tree
+|  |
+| ------- |
+| [0144-binary-tree-preorder-traversal](https://github.com/WesloTheWeb/leet-code-grind/tree/master/0144-binary-tree-preorder-traversal) |
 <!---LeetCode Topics End-->
